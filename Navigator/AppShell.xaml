@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<r:TransitionShell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:r="clr-namespace:Navigator.Renderers;assembly=Navigator"
+             x:Class="Navigator.AppShell">
+    
+</r:TransitionShell>

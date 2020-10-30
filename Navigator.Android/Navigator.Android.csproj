@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\FilledImageRenderer.cs" />
     <Compile Include="Renderers\TransitionShellRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +71,13 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\book.xml" />
+    <AndroidResource Include="Resources\drawable\bookmark.xml" />
+    <AndroidResource Include="Resources\drawable\compass.xml" />
+    <AndroidResource Include="Resources\drawable\heart.xml" />
+    <AndroidResource Include="Resources\drawable\glass.xml" />
+    <AndroidResource Include="Resources\drawable\person.xml" />
+    <AndroidResource Include="Resources\drawable\star.xml" />
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -86,9 +94,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Navigator\Navigator.csproj">

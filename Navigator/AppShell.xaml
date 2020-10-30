@@ -1,8 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
+<!-- ReSharper disable MarkupAttributeTypo -->
 <r:TransitionShell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:r="clr-namespace:Navigator.Renderers;assembly=Navigator"
-             x:Class="Navigator.AppShell">
+             xmlns:loading="clr-namespace:Navigator.Pages.Loading;assembly=Navigator"
+             xmlns:login="clr-namespace:Navigator.Pages.Login;assembly=Navigator"
+             xmlns:recommendation="clr-namespace:Navigator.Pages.Main.Recommendation;assembly=Navigator"
+             xmlns:favorites="clr-namespace:Navigator.Pages.Main.Favorites;assembly=Navigator"
+             xmlns:search="clr-namespace:Navigator.Pages.Main.Search;assembly=Navigator"
+             xmlns:profile="clr-namespace:Navigator.Pages.Main.Profile;assembly=Navigator"
+             x:Class="Navigator.AppShell"
+             
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
     
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TitleColor" Value="White"/>
+                <Setter Property="Shell.BackgroundColor" Value="Blue"/>
+                <Setter Property="Shell.ForegroundColor" Value="White"/>
+                <Setter Property="Shell.UnselectedColor" Value="White"/>
+                <Setter Property="Shell.DisabledColor" Value="White"/>
+                
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Blue"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
+        </ResourceDictionary>
+    </Shell.Resources>
+    
+    <Shell.Items>
+        <ShellContent
+            Route="loading"
+            ContentTemplate="{DataTemplate loading:LoadingPage}"
+            Title="Загрузка"/>
+        <ShellItem
+            Route="login"
+            Title="Логин">
+            <ShellContent
+                Route="authorization"
+                ContentTemplate="{DataTemplate login:AuthorizationPage}"
+                Title="Авторизация"/>
+            <ShellContent
+                Route="registration"
+                ContentTemplate="{DataTemplate login:RegistrationPage}"
+                Title="Регистрация"/>
+        </ShellItem>
+        <ShellItem
+            Route="main"
+            Title="Основное">
+            <ShellContent
+                Route="tags"
+                ContentTemplate="{DataTemplate recommendation:RecommendationTagsPage}"
+                Title="Навигатор"
+                Icon="compass"/>
+            <Tab
+                Route="favorites"
+                Title="Избранное"
+                Icon="star">
+                <ShellContent 
+                    Route="bookmarks"
+                    ContentTemplate="{DataTemplate favorites:BookmarksPage}"
+                    Title="Закладки"/>
+                <ShellContent 
+                    Route="events"
+                    ContentTemplate="{DataTemplate favorites:SelectedEventsPage}"
+                    Title="События"/>
+                <ShellContent 
+                    Route="organizations"
+                    ContentTemplate="{DataTemplate favorites:SelectedOrganizationsPage}"
+                    Title="Организации"/>
+            </Tab>
+            <ShellContent 
+                Route="search" 
+                ContentTemplate="{DataTemplate search:SearchPage}"
+                Title="Поиск"
+                Icon="glass"/>
+            <ShellContent 
+                Route="profile" 
+                ContentTemplate="{DataTemplate profile:ProfileInformationPage}"
+                Title="Профиль"
+                Icon="person"/>
+        </ShellItem>
+    </Shell.Items>
+
 </r:TransitionShell>

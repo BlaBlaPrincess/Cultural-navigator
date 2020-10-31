@@ -10,6 +10,8 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(TransitionShell), typeof(TransitionShellRenderer))]
 namespace Navigator.Droid.Renderers
 {
+    // TODO: stretch tabs
+    // TODO: fix tab transition animation
     public class TransitionShellRenderer : ShellRenderer
     {
         public TransitionShellRenderer(Context context) : base(context)

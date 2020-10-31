@@ -48,11 +48,11 @@
                 Route="tags"
                 ContentTemplate="{DataTemplate recommendation:RecommendationTagsPage}"
                 Title="Навигатор"
-                Icon="compass"/>
+                Icon="v_compass"/>
             <Tab
                 Route="favorites"
                 Title="Избранное"
-                Icon="star">
+                Icon="v_star">
                 <ShellContent 
                     Route="bookmarks"
                     ContentTemplate="{DataTemplate favorites:BookmarksPage}"
@@ -70,12 +70,12 @@
                 Route="search" 
                 ContentTemplate="{DataTemplate search:SearchPage}"
                 Title="Поиск"
-                Icon="glass"/>
+                Icon="v_glass"/>
             <ShellContent 
                 Route="profile" 
                 ContentTemplate="{DataTemplate profile:ProfileInformationPage}"
                 Title="Профиль"
-                Icon="person"/>
+                Icon="v_person"/>
         </TabBar>
     </Shell.Items>
 

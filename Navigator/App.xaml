@@ -8,10 +8,10 @@
             <Color x:Key="PrimaryLight">#616161</Color>
             <Color x:Key="PrimaryMedium">#333333</Color>
             <Color x:Key="PrimaryDark">#1d1d1d</Color>
-            <Color x:Key="Accent1">#d53369</Color>
+            <Color x:Key="Accent1">White</Color>
             <Color x:Key="Accent1Dark">#9f3560</Color>
             <Color x:Key="Accent2">#cbad6d</Color>
-            <LinearGradientBrush x:Key="AngularGradient" StartPoint="0,0" EndPoint="1,1">
+            <LinearGradientBrush x:Key="AngularGradient" StartPoint="0,1" EndPoint="1,0">
                 <GradientStop Color="{StaticResource Accent1}" Offset="0"/>
                 <GradientStop Color="{StaticResource Accent2}" Offset="1"/>
             </LinearGradientBrush>

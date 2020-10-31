@@ -10,7 +10,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(FilledImage), typeof(FilledImageRenderer))]
 namespace Navigator.Droid.Renderers
 {
-    public class FilledImageRenderer : ViewRenderer<FilledImage, ImageView>
+    public class FilledImageRenderer : ImageRenderer
     {
         private bool _isDisposed;
 
@@ -28,7 +28,7 @@ namespace Navigator.Droid.Renderers
             base.Dispose(disposing);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<FilledImage> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
             base.OnElementChanged(e);
             if (e.OldElement == null)
@@ -40,6 +40,7 @@ namespace Navigator.Droid.Renderers
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            base.OnElementPropertyChanged(sender, e);
             if (e.PropertyName == FilledImage.ForegroundProperty.PropertyName)
             {
                 UpdateBitmap();
@@ -48,12 +49,14 @@ namespace Navigator.Droid.Renderers
 
         private void UpdateBitmap()
         {
-            if (_isDisposed || string.IsNullOrWhiteSpace(Element.Source)) return;
-            var d = Context?.GetDrawable(Element.Source).Mutate();
+            if (_isDisposed) return;
+            var source = ((FilledImage)Element).Source;
+            if (string.IsNullOrWhiteSpace(source)) return;
+            var d = Context?.GetDrawable(source).Mutate();
             if (d != null)
             {
-                d.SetColorFilter(new LightingColorFilter(Element.Foreground.ToAndroid(), Element.Foreground.ToAndroid()));
-                d.Alpha = Element.Foreground.ToAndroid().A;
+                d.SetColorFilter(new LightingColorFilter(((FilledImage)Element).Foreground.ToAndroid(), ((FilledImage)Element).Foreground.ToAndroid()));
+                d.Alpha = ((FilledImage)Element).Foreground.ToAndroid().A;
                 Control.SetImageDrawable(d);
             }
             ((IVisualElementController)Element).NativeSizeChanged();

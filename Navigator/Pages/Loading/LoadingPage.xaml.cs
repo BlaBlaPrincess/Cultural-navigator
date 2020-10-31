@@ -13,7 +13,7 @@ namespace Navigator.Pages.Loading
 
         protected override async void OnAppearing()
         {
-            await Shell.Current.GoToAsync("///main/navigator/tags");
+            await Shell.Current.GoToAsync("///login/authorization");
         }
     }
 }

@@ -15,6 +15,22 @@ namespace Navigator.Pages.Login
         public AuthorizationPage()
         {
             InitializeComponent();
+
+            EmailEntry.ReturnCommand = new Command(() => PasswordEntry.Focus());
+
+            var registerLabelGestureRecognizer = new TapGestureRecognizer();
+            registerLabelGestureRecognizer.Tapped += async (s, e) =>
+            {
+                await Shell.Current.GoToAsync("///login/registration");
+            };
+            RegisterLabel.GestureRecognizers.Add(registerLabelGestureRecognizer);
+
+            var forgotPasswordLabelGestureRecognizer = new TapGestureRecognizer();
+            forgotPasswordLabelGestureRecognizer.Tapped += async (s, e) =>
+            {
+                await Shell.Current.GoToAsync("///login/recovery");
+            };
+            ForgotPasswordLabel.GestureRecognizers.Add(forgotPasswordLabelGestureRecognizer);
         }
     }
 }

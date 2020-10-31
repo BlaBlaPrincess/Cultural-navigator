@@ -11,8 +11,8 @@ namespace Navigator.Locked
         {
             base.OnAppearing();
 
-            await Shell.Current.GoToAsync("///login/authorization");
             await Shell.Current.DisplayAlert("Assertion", $"This page not allowed now", "Ok");
+            await Shell.Current.GoToAsync("///login/authorization");
         }
     }
 }

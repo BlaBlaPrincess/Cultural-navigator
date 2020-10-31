@@ -22,7 +22,7 @@
              Shell.TabBarBackgroundColor="{StaticResource PrimaryDark}"
              Shell.TabBarUnselectedColor="{StaticResource PrimaryLight}"
              
-             TabTitleEmphasizerColor="{StaticResource Accent1Dark}">
+             TabTitleEmphasizerColor="{StaticResource Accent2}">
     
     <Shell.Items>
         <ShellContent
@@ -40,6 +40,10 @@
                 Route="registration"
                 ContentTemplate="{DataTemplate login:RegistrationPage}"
                 Title="Регистрация"/>
+            <ShellContent
+                Route="recovery"
+                ContentTemplate="{DataTemplate login:PasswordRecoveryPage}"
+                Title="Восстановлене пароля"/>
         </ShellItem>
         <TabBar
             Route="main"

@@ -1,18 +1,18 @@
-﻿using Navigator.Locked;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Navigator.Pages.Main.Search
+namespace Navigator.Pages.Main.Recommendation
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SearchPage : LockedMainPage
+    public partial class RecommendationPage : ContentPage
     {
-        public SearchPage()
+        public RecommendationPage()
         {
             InitializeComponent();
         }

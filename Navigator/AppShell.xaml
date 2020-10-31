@@ -44,11 +44,17 @@
         <TabBar
             Route="main"
             Title="Основное">
-            <ShellContent
-                Route="tags"
-                ContentTemplate="{DataTemplate recommendation:RecommendationTagsPage}"
+            <Tab
+                Route="navigator"
                 Title="Навигатор"
-                Icon="v_compass"/>
+                Icon="v_compass">
+                <ShellContent
+                    Route="tags"
+                    ContentTemplate="{DataTemplate recommendation:RecommendationTagsPage}"/>
+                <ShellContent 
+                    Route="recommendation"
+                    ContentTemplate="{DataTemplate recommendation:RecommendationPage}"/>
+            </Tab>
             <Tab
                 Route="favorites"
                 Title="Избранное"

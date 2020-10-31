@@ -2,6 +2,7 @@
 using Android.OS;
 using AndroidX.Fragment.App;
 using Navigator.Droid.Renderers;
+using Navigator.Droid.Renderers.Elements;
 using Navigator.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -18,6 +19,16 @@ namespace Navigator.Droid.Renderers
 
         protected override void SetupPageTransition(FragmentTransaction transaction)
         {
+        }
+        
+        protected override IShellBottomNavViewAppearanceTracker CreateBottomNavViewAppearanceTracker(ShellItem shellItem)
+        {
+            return new BottomNavAppearance(this, shellItem, ((TransitionShell)Element).TabBarIconForeground);
+        }
+        
+        protected override IShellTabLayoutAppearanceTracker CreateTabLayoutAppearanceTracker(ShellSection shellSection)
+        {
+            return new TabLayoutAppearance(this, ((TransitionShell)Element).TabTitleEmphasizerColor);
         }
     }
 }

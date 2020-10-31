@@ -12,26 +12,17 @@
              x:Class="Navigator.AppShell"
              
              Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="False">
-    
-    <Shell.Resources>
-        <ResourceDictionary>
-            <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.TitleColor" Value="White"/>
-                <Setter Property="Shell.BackgroundColor" Value="Blue"/>
-                <Setter Property="Shell.ForegroundColor" Value="White"/>
-                <Setter Property="Shell.UnselectedColor" Value="White"/>
-                <Setter Property="Shell.DisabledColor" Value="White"/>
-                
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
-                <Setter Property="Shell.TabBarBackgroundColor" Value="Blue"/>
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="White"/>
-            </Style>
-            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
-            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
-        </ResourceDictionary>
-    </Shell.Resources>
+             Shell.NavBarIsVisible="False"
+             
+             Shell.TitleColor="{StaticResource TextColor}"
+             Shell.BackgroundColor="{StaticResource PrimaryDark}"
+             Shell.UnselectedColor="{StaticResource PrimaryLight}"
+             
+             Shell.TabBarTitleColor="{StaticResource Accent1}"
+             Shell.TabBarBackgroundColor="{StaticResource PrimaryDark}"
+             Shell.TabBarUnselectedColor="{StaticResource PrimaryLight}"
+             
+             TabTitleEmphasizerColor="{StaticResource Accent1Dark}">
     
     <Shell.Items>
         <ShellContent
@@ -50,7 +41,7 @@
                 ContentTemplate="{DataTemplate login:RegistrationPage}"
                 Title="Регистрация"/>
         </ShellItem>
-        <ShellItem
+        <TabBar
             Route="main"
             Title="Основное">
             <ShellContent
@@ -85,7 +76,7 @@
                 ContentTemplate="{DataTemplate profile:ProfileInformationPage}"
                 Title="Профиль"
                 Icon="person"/>
-        </ShellItem>
+        </TabBar>
     </Shell.Items>
 
 </r:TransitionShell>

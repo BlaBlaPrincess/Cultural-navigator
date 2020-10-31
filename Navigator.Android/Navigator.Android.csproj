@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
+    <Compile Include="Renderers\Elements\BottomNavAppearance.cs" />
+    <Compile Include="Renderers\Elements\TabLayoutAppearance.cs" />
     <Compile Include="Renderers\FilledImageRenderer.cs" />
     <Compile Include="Renderers\TransitionShellRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

@@ -1,4 +1,4 @@
-﻿using Navigator.ViewModels;
+﻿using Navigator.Locked;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +11,10 @@ using Xamarin.Forms.Xaml;
 namespace Navigator.Pages.Main.Recommendation
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RecommendationTagsPage : ContentPage
+    public partial class InaccessibleRecommendationPage : LockedItemPage
     {
-        public RecommendationTagsPage()
+        public InaccessibleRecommendationPage()
         {
-            BindingContext = new RecommendationTagsVm();
-
             InitializeComponent();
         }
     }

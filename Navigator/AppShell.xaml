@@ -55,9 +55,6 @@
                 <ShellContent
                     Route="tags"
                     ContentTemplate="{DataTemplate recommendation:RecommendationTagsPage}"/>
-                <ShellContent 
-                    Route="recommendation"
-                    ContentTemplate="{DataTemplate recommendation:RecommendationPage}"/>
             </Tab>
             <Tab
                 Route="favorites"

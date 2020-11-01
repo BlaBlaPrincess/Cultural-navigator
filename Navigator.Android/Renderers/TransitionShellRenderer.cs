@@ -21,6 +21,7 @@ namespace Navigator.Droid.Renderers
 
         protected override void SetupPageTransition(FragmentTransaction transaction)
         {
+            transaction.SetCustomAnimations(Resource.Animation.scale_in, Resource.Animation.scale_out);
         }
         
         protected override IShellBottomNavViewAppearanceTracker CreateBottomNavViewAppearanceTracker(ShellItem shellItem)

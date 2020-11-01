@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Navigator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,8 @@ namespace Navigator.Pages.Login
     {
         public AuthorizationPage()
         {
+            BindingContext = new AuthorizationVm();
+
             InitializeComponent();
 
             EmailEntry.ReturnCommand = new Command(() => PasswordEntry.Focus());

@@ -83,7 +83,8 @@
             TextColor="{StaticResource Accent1}"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="Start"
-            BackgroundColor="{StaticResource PrimaryDark}"/>
+            BackgroundColor="{StaticResource PrimaryDark}"
+            Command="{Binding LoginCommand}"/>
         <StackLayout
             Grid.Column="1" Grid.Row="7"
             VerticalOptions="Start"

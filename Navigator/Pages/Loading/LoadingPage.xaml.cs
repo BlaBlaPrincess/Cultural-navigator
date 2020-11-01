@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Navigator.ViewModels;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Navigator.Pages.Loading
@@ -7,8 +8,9 @@ namespace Navigator.Pages.Loading
     {
         public LoadingPage()
         {
+            BindingContext = new LoadingVm();
+
             InitializeComponent();
-            Debug.WriteLine("Loading page has been loaded");
         }
 
         protected override async void OnAppearing()

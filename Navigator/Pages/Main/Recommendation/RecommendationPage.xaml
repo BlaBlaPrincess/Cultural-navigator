@@ -21,8 +21,8 @@
                                     HeightRequest="60"
                                     CornerRadius="20"
                                     Padding="0"
-                                    BackgroundColor="{StaticResource PrimaryDark}"
-                                    VerticalOptions="Start">
+                                    BackgroundColor="{StaticResource Accent1}"
+                                    VerticalOptions="Center">
                                     <StackLayout
                                         Orientation="Horizontal"
                                         Spacing="0">
@@ -33,28 +33,24 @@
                                             HorizontalOptions="Start"
                                             Margin="10"
                                             Source="v_book"
-                                            Foreground="{StaticResource Accent1}"/>
+                                            Foreground="{StaticResource PrimaryDark}"/>
                                         <StackLayout
                                             Padding="0"
                                             Spacing="0"
                                             VerticalOptions="Center">
                                             <StackLayout Orientation="Horizontal">
-                                                <!--<Label
-                                                    BindingContext="{Binding Source={x:Reference ListView}, Path=BindingContext}"
-                                                    Text="{Binding TitleProperty}"
-                                                    FontSize="Medium"/>-->
                                                 <Label
                                                     Text="{Binding Title}"
-                                                    FontSize="Medium"/>
+                                                    FontSize="Medium"
+                                                    LineBreakMode="MiddleTruncation"
+                                                    TextColor="{StaticResource PrimaryDark}"/>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                <!--<Label
-                                                    BindingContext="{Binding Source={x:Reference ListView}, Path=BindingContext}"
-                                                    Text="{Binding AuthorProperty}"
-                                                    FontSize="Medium"/>-->
                                                 <Label
                                                     Text="{Binding Author}"
-                                                    FontSize="Medium"/>
+                                                    FontSize="Medium"
+                                                    LineBreakMode="MiddleTruncation"
+                                                    TextColor="{StaticResource PrimaryDark}"/>
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>

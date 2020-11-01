@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Navigator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,12 @@ namespace Navigator.Pages.Main.Recommendation
     {
         public RecommendationPage()
         {
+            InitializeComponent();
+        }
+
+        public RecommendationPage(BaseViewModel viewModel)
+        {
+            BindingContext = viewModel;
             InitializeComponent();
         }
     }

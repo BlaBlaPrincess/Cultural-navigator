@@ -2,13 +2,69 @@
 <!-- ReSharper disable MarkupAttributeTypo -->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:r="clr-namespace:Navigator.Renderers;assembly=Navigator"
              x:Class="Navigator.Pages.Main.Recommendation.RecommendationPage">
 
-    <Grid>
-        <Label
-            Text="Рекомендации"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
+    <Grid
+        Padding="10">
+        <ScrollView>
+            <ListView
+                x:Name="ListView"
+                ItemsSource="{Binding Items}"
+                RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame
+                                    Margin="5,0"
+                                    HeightRequest="60"
+                                    CornerRadius="20"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource PrimaryDark}"
+                                    VerticalOptions="Start">
+                                    <StackLayout
+                                        Orientation="Horizontal"
+                                        Spacing="0">
+                                        <r:FilledImage
+                                            HeightRequest="40"
+                                            WidthRequest="40"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Start"
+                                            Margin="10"
+                                            Source="v_book"
+                                            Foreground="{StaticResource Accent1}"/>
+                                        <StackLayout
+                                            Padding="0"
+                                            Spacing="0"
+                                            VerticalOptions="Center">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label
+                                                    BindingContext="{Binding Source={x:Reference ListView}, Path=BindingContext}"
+                                                    Text="{Binding TitleProperty}"
+                                                    FontSize="Medium"/>
+                                                <Label
+                                                    Text="{Binding Title}"
+                                                    FontSize="Medium"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label
+                                                    BindingContext="{Binding Source={x:Reference ListView}, Path=BindingContext}"
+                                                    Text="{Binding AuthorProperty}"
+                                                    FontSize="Medium"/>
+                                                <Label
+                                                    Text="{Binding Author}"
+                                                    FontSize="Medium"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
     </Grid>
 
 </ContentPage>

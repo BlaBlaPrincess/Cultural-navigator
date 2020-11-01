@@ -8,6 +8,15 @@ namespace Navigator.ViewModels
 {
     public class RecommendationTagsVm : BaseViewModel
     {
+        public RecommendedBooksVm RecommendedBooks;
+        public RecommendationPage RecommendedBooksPage;
+
+        public RecommendationTagsVm()
+        {
+            RecommendedBooks = new RecommendedBooksVm();
+            RecommendedBooksPage = new RecommendationPage(RecommendedBooks);
+        }
+
         private Command _goToRecommendationsCommand;
         public Command GoToRecommendationsCommand =>
             _goToRecommendationsCommand ??= new Command(async (p) =>
@@ -18,7 +27,7 @@ namespace Navigator.ViewModels
                         break;
 
                     case "books":
-                        await Shell.Current.Navigation.PushAsync(new RecommendationPage());
+                        await Shell.Current.Navigation.PushAsync(RecommendedBooksPage);
                         break;
 
                     case "inaccessible":

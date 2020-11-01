@@ -11,13 +11,21 @@ namespace Navigator.Models
 
         public Book(string title, string author)
         {
-            if(!string.IsNullOrWhiteSpace(title))
+            if (string.IsNullOrWhiteSpace(title))
             {
                 Title = "Название не указано";
             }
-            if (!string.IsNullOrWhiteSpace(author))
+            else
+            {
+                Title = title;
+            }
+            if (string.IsNullOrWhiteSpace(author))
             {
                 Author = "Автор не указан";
+            }
+            else
+            {
+                Author = author;
             }
         }
     }

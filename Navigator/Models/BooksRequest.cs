@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -9,28 +11,31 @@ namespace Navigator.Models
 {
     public class BooksRequest
     {
-        public List<Book> Books;
-
         private class BookJson
         {
-            public string[] names;
-            public string[] authors;
+            public string[] names = new string[20];
+            public string[] authors = new string[20];
         }
 
-        public async void GetBooks()
+        public List<Book> GetBooks()
         {
-            Books = new List<Book>();
+            var books = new List<Book>();
 
-            var client = new HttpClient();
-            var uri = new Uri("http://188.134.65.35");
-            Stream respStream = await client.GetStreamAsync(uri);
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(BookJson));
-            BookJson feed = (BookJson)ser.ReadObject(respStream);
-            for(int i = 0; i < feed.names.Length; i++)
+            string json;
+            using (WebClient wc = new WebClient())
             {
-                Books.Add(new Book(feed.names[i], feed.authors[i]));
+                wc.QueryString.Add("name", "Полужизнь");
+                wc.QueryString.Add("k", "20");
+                json = wc.DownloadString("http://188.134.65.35");
             }
-            //System.Diagnostics.Debug.WriteLine(feed.SONGHISTORY[0].TITLE);
+
+            BookJson ser = JsonConvert.DeserializeObject<BookJson>(json);
+            for (int i = 0; i < 20; i++)
+            {
+                books.Add(new Book(ser.names[i], ser.authors[i]));
+            }
+
+            return books;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Navigator.ViewModels
         public RecommendedBooksVm()
         {
             var request = new BooksRequest();
-            request.GetBooks();
+            Items = request.GetBooks();
             //Items = request.Books;
         }
     }

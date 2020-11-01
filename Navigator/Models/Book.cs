@@ -9,10 +9,16 @@ namespace Navigator.Models
         public string Title { get; set; }
         public string Author { get; set; }
 
-        public Book(string title="Название не указано", string author="Автор не указан")
+        public Book(string title, string author)
         {
-            Title = title;
-            Author = author;
+            if(!string.IsNullOrWhiteSpace(title))
+            {
+                Title = "Название не указано";
+            }
+            if (!string.IsNullOrWhiteSpace(author))
+            {
+                Author = "Автор не указан";
+            }
         }
     }
 }

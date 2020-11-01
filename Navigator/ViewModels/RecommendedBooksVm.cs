@@ -21,8 +21,8 @@ namespace Navigator.ViewModels
             set => SetProperty(ref _referenceItem, value);
         }
 
-        private ObservableCollection<Book> _items;
-        public ObservableCollection<Book> Items
+        private List<Book> _items;
+        public List<Book> Items
         {
             get => _items;
             set => SetProperty(ref _items, value);
@@ -30,43 +30,9 @@ namespace Navigator.ViewModels
 
         public RecommendedBooksVm()
         {
-            ReferenceItem = new Book("Стрельбище на газоне", "Перевод с английского, немецкого, французского, испанского, польского");
-
-            Items = new ObservableCollection<Book>
-            {
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4"),
-                new Book("Пипега1", "Пушкин1"),
-                new Book("Пипега2", "Пушкин2"),
-                new Book("Пипега3", "Пушкин3"),
-                new Book("Пипега4", "Пушкин4")
-            };
+            var request = new BooksRequest();
+            request.GetBooks();
+            //Items = request.Books;
         }
     }
 }

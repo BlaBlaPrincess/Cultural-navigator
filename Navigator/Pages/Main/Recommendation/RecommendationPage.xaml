@@ -39,19 +39,19 @@
                                             Spacing="0"
                                             VerticalOptions="Center">
                                             <StackLayout Orientation="Horizontal">
-                                                <Label
+                                                <!--<Label
                                                     BindingContext="{Binding Source={x:Reference ListView}, Path=BindingContext}"
                                                     Text="{Binding TitleProperty}"
-                                                    FontSize="Medium"/>
+                                                    FontSize="Medium"/>-->
                                                 <Label
                                                     Text="{Binding Title}"
                                                     FontSize="Medium"/>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label
+                                                <!--<Label
                                                     BindingContext="{Binding Source={x:Reference ListView}, Path=BindingContext}"
                                                     Text="{Binding AuthorProperty}"
-                                                    FontSize="Medium"/>
+                                                    FontSize="Medium"/>-->
                                                 <Label
                                                     Text="{Binding Author}"
                                                     FontSize="Medium"/>

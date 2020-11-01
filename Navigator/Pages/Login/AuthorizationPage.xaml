@@ -41,6 +41,7 @@
                 <Style TargetType="r:BorderlessEntry">
                     <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                     <Setter Property="Margin" Value="0,0,25,0"/>
+                    <Setter Property="PlaceholderColor" Value="{StaticResource PrimaryLight}"/>
                 </Style>
             </ResourceDictionary>
         </Grid.Resources>
@@ -60,7 +61,7 @@
             <StackLayout Orientation="Horizontal">
                 <r:FilledImage Source="v_email"/>
                 <r:BorderlessEntry
-                    Placeholder="Имя пользователя/Почта"
+                    Placeholder="Почта"
                     Text="{Binding User}"
                     x:Name="EmailEntry"/>
             </StackLayout>

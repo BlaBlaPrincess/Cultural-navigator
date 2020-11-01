@@ -43,14 +43,16 @@
                                                     Text="{Binding Title}"
                                                     FontSize="Medium"
                                                     LineBreakMode="MiddleTruncation"
-                                                    TextColor="{StaticResource PrimaryDark}"/>
+                                                    TextColor="{StaticResource PrimaryDark}"
+                                                    Margin="0,0,15,0"/>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label
                                                     Text="{Binding Author}"
                                                     FontSize="Medium"
                                                     LineBreakMode="MiddleTruncation"
-                                                    TextColor="{StaticResource PrimaryDark}"/>
+                                                    TextColor="{StaticResource PrimaryDark}"
+                                                    Margin="0,0,15,0"/>
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
